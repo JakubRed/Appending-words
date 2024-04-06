@@ -1,8 +1,8 @@
 #include "../include/constants.hpp"
-// #include "../include/LinuxFileWrite.hpp"
-// #include "../include/WindowsFileWrite.hpp"
-#include "WindowsFileWrite.cpp"
-#include "LinuxFileWrite.cpp"
+#include "../include/LinuxFileWrite.hpp"
+#include "../include/WindowsFileWrite.hpp"
+// #include "WindowsFileWrite.cpp"
+// #include "LinuxFileWrite.cpp"
 int main(int argc, char* argv[])
 {   
     if (argc < MINIMAL_VALID_VALUE_OF_ARGUMENTS)    //incorrect amount of arguments 

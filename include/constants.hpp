@@ -4,6 +4,7 @@
 #include <iostream>
 #include <fstream>
 #include <fcntl.h>
+#include <string.h>
 #include <sys/stat.h> 
 
 const int MINIMAL_VALID_VALUE_OF_ARGUMENTS = 4;
