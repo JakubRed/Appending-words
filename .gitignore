@@ -1,4 +1,8 @@
 .vscode/
+test.txt
+out/
+build/
+.vs/
 # Prerequisites
 *.d
 
