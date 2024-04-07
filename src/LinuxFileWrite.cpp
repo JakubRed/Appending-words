@@ -1,7 +1,6 @@
 #include "../include/LinuxFileWrite.hpp"
 #include <fcntl.h>
-#include <unistd.h>
-// #include <unistd.h>
+#include <io.h>
 
 LinuxFileWrite::LinuxFileWrite(std::string fileName)
 {   
