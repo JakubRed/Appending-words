@@ -1,5 +1,4 @@
 #include "../include/LinuxFileWrite.hpp"
-#include <fcntl.h>
 #include <io.h>
 
 LinuxFileWrite::LinuxFileWrite(std::string fileName)
@@ -19,8 +18,8 @@ LinuxFileWrite::~LinuxFileWrite()
     }        
 }
 
-int LinuxFileWrite:: fWrite (int wordCount, char** dataToBeAppended){
-    int retVal = NO_ERROR;
+ErrorCodes LinuxFileWrite:: fWrite (int wordCount, char** dataToBeAppended){
+    ErrorCodes retVal = ErrorCodes::NO_ERROR;
     std::string dataAsString; 
     for (size_t i = 0; i < wordCount; i++)
     {
@@ -28,7 +27,7 @@ int LinuxFileWrite:: fWrite (int wordCount, char** dataToBeAppended){
         if (FILE_FUNC_ERROR == write(fileDescriptor, dataAsString.c_str(), dataAsString.size()))
         {
             std::cerr << "Failed to write the word \"" << dataToBeAppended[i] << "\" to a file\t" << strerror(errno) << std::endl;
-            retVal = FAILED_TO_WRITE;
+            retVal = ErrorCodes::FAILED_TO_WRITE;
         }
     }
     return retVal; //added for scalability

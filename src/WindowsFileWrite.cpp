@@ -17,16 +17,16 @@ WindowsFileWrite::~WindowsFileWrite()
     }
 }
 
-int WindowsFileWrite::fWrite(int wordCount, char** dataToBeAppended)
+ErrorCodes WindowsFileWrite::fWrite(int wordCount, char** dataToBeAppended)
 {   
-    int retVal = NO_ERROR;    
+    ErrorCodes retVal = ErrorCodes::NO_ERROR;    
     for (size_t i = 0; i < wordCount; i++)
     {
         fileToWrite << dataToBeAppended[i] << std::endl;
         if (fileToWrite.fail())
         {
             std::cerr << "Failed to write the word \"" << dataToBeAppended[i] << "\" to a file\t" << strerror(errno) << std::endl;
-            retVal = FAILED_TO_WRITE;
+            retVal = ErrorCodes::FAILED_TO_WRITE;
         }        
     }
     return retVal;  //added for scalability

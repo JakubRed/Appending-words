@@ -10,19 +10,19 @@ int main(int argc, char* argv[])
         {
         case 0:
             std::cerr << "Error, not even a path included!" << std::endl;
-            return INPUT_ERROR;
+            return static_cast<int>(ErrorCodes::INPUT_ERROR);
             break;
         case 1:
             std::cerr << "No arguments inserted." <<std::endl;
-            return NO_INPUT_ARGUMENTS;
+            return static_cast<int>(ErrorCodes::NO_INPUT_ARGUMENTS);
             break;
         case 2:
            std::cerr << "Only write option entered." <<std::endl;
-            return NO_FILE_NAME_NOR_WORDS;
+            return static_cast<int>(ErrorCodes::NO_FILE_NAME_NOR_WORDS);
             break;
         case 3:
            std::cerr << "Only the save option and file have been selected." <<std::endl;
-            return NO_WORDS_TO_BE_WRITTEN;
+            return static_cast<int>(ErrorCodes::NO_WORDS_TO_BE_WRITTEN);
             break;
         }        
     }
@@ -41,8 +41,8 @@ int main(int argc, char* argv[])
         appendingOperationW.fWrite (wordCount, dataToBeAppended);
     } else {
         std::cerr << "Wrong write option selected." << std::endl;
-        return INVALID_WRITE_OPTION;
+        return static_cast<int>(ErrorCodes::INVALID_WRITE_OPTION);
     }
 
-    return NO_ERROR;
+    return static_cast<int>(ErrorCodes::NO_ERROR);
 }

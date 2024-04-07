@@ -10,7 +10,7 @@ private:
 public:
     WindowsFileWrite(std::string fileName);
     ~WindowsFileWrite();
-    int fWrite(int wordCount, char** dataToBeAppended);
+    ErrorCodes fWrite(int wordCount, char** dataToBeAppended);
 };
 
 #endif // WINDOWS_FILE_WRITE_HPP
